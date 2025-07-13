@@ -448,7 +448,6 @@ span {
 
 /* Small screens (e.g., smartphones) */
 @media (max-width: 768px) {
-    /* Hamburger menu icon and mobile nav toggle */
     .header .navbar {
         display: none; /* Hide the regular navbar on small screens */
     }
