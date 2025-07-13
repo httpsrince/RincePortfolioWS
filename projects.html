@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> RINCE PORTFOLIO - Education </title>
+        <link rel="stylesheet" href="projects.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+
+    <body>
+        <header class="header">
+            <a href="index.html" class="logo"> <span>https.</span>rince </a>
+            <div id="menu-icon" class="menu-icon"><i class='bx bx-menu'></i></div>
+            <nav class="navbar">
+                <a href="index.html"> PORTFOLIO</a>
+                <a href="aboutme.html"> ABOUT ME</a>
+                <a href="education.html"> EDUCATION</a>
+                <a href="skills.html"> SKILLS</a>
+                <a href="projects.html" class="active"> PROJECTS</a>
+            </nav>
+            <a href="index.html#contact-section" class="contact"> CONTACT ME </a>
+        </header>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const status = urlParams.get('status');
+            const message = urlParams.get('msg');
+
+            if (status === 'success') {
+                alert('Message sent successfully!');
+                history.replaceState(null, '', window.location.pathname + window.location.hash);
+            } else if (status === 'error') {
+                alert('Error: ' + (message ? decodeURIComponent(message) : 'An unknown error occurred.'));
+                history.replaceState(null, '', window.location.pathname + window.location.hash);
+            }
+
+            const menuIcon = document.getElementById('menu-icon');
+            const navbar = document.querySelector('.navbar');
+            const contactBtn = document.querySelector('.header .contact');
+
+            menuIcon.addEventListener('click', () => {
+                navbar.classList.toggle('active');
+                if (navbar.classList.contains('active')) {
+                    contactBtn.style.display = 'none';
+                } else {
+                    contactBtn.style.display = 'block';
+                }
+            });
+
+            navbar.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navbar.classList.remove('active');
+                    contactBtn.style.display = 'block';
+                });
+            });
+        });
+        </script>
+
+        <section class="project-section">
+            <h2 class="section-title"> Personal Projects </h2> <div class="project-container">
+
+                <div class="project-entry">
+                    <h3> Project Title </h3>
+                        <p> • Personal Portfolio Website </p>
+                    <br>
+                    <h3> Technologies/Tools Used </h3>
+                        <p> • HTML5, CSS3, JavaScript, PHP, MySQL, VS Code, XAMPP, GitHub </p>
+                    <br>
+                    <h3> Brief Description </h3>
+                        <p> • Developed a responsive and interactive personal portfolio website using HTML5, CSS3, and JavaScript to showcase projects and skills.
+                            <br> • Implemented a PHP and MySQL backend for a functional contact form, allowing visitors to send messages securely.
+                            <br> • Utilized VS Code for development, XAMPP for local server testing, and GitHub for version control and deployment, demonstrating proficiency in a modern development workflow.
+                        </p>
+                    <br>
+                    <h3> Links </h3>
+                        <p> N/A </p>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> RINCE PORTFOLIO - Skills </title> <link rel="stylesheet" href="skills.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+
+    <body>
+        <header class="header">
+            <a href="index.html" class="logo"> <span>https.</span>rince </a>
+
+            <div id="menu-icon" class="menu-icon"><i class='bx bx-menu'></i></div>
+
+            <nav class="navbar">
+                <a href="index.html"> PORTFOLIO</a>
+                <a href="aboutme.html"> ABOUT ME</a>
+                <a href="education.html"> EDUCATION</a>
+                <a href="skills.html" class="active"> SKILLS</a>
+                <a href="projects.html"> PROJECTS</a>
+            </nav>
+
+            <a href="index.html#contact-section" class="contact"> CONTACT ME </a>
+        </header>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const status = urlParams.get('status');
+            const message = urlParams.get('msg');
+
+            if (status === 'success') {
+                alert('Message sent successfully!');
+                history.replaceState(null, '', window.location.pathname + window.location.hash);
+            } else if (status === 'error') {
+                alert('Error: ' + (message ? decodeURIComponent(message) : 'An unknown error occurred.'));
+                history.replaceState(null, '', window.location.pathname + window.location.hash);
+            }
+
+            const menuIcon = document.getElementById('menu-icon');
+            const navbar = document.querySelector('.navbar');
+            const contactBtn = document.querySelector('.header .contact'); 
+
+            menuIcon.addEventListener('click', () => {
+                navbar.classList.toggle('active');
+                if (navbar.classList.contains('active')) {
+                    contactBtn.style.display = 'none';
+                } else {
+                    contactBtn.style.display = 'block'; 
+                }
+            });
+
+            navbar.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navbar.classList.remove('active');
+                    contactBtn.style.display = 'block'; 
+                });
+            });
+        });
+        </script>
+
+        <section class="skills-section"> <h3 class="heading-main">My Skills</h3> <div class="skills-container">
+                <div class="skills-column technical-skills">
+                    <h2>Technical Skills</h2>
+                    <h4>Programming & Markup Languages</h4>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>PHP (Basic)</li>
+                        <li>Python (Basic)</li>
+                    </ul>
+
+                    <h4>Database Management</h4>
+                    <ul>
+                        <li>MySQL</li>
+                    </ul>
+
+                    <h4>Tools & Environments</h4>
+                    <ul>
+                        <li>VS Code</li>
+                        <li>XAMPP</li>
+                        <li>GitHub</li>
+                    </ul>
+                </div>
+
+                <div class="skills-column soft-skills">
+                    <h2>Soft Skills</h2>
+                    <ul>
+                        <li>Communication</li>
+                        <li>Adaptability/Flexibility</li>
+                        <li>Active Listening</li>
+                        <li>Resilience</li>
+                        <li>Accountability</li>
+                        <li>Discipline</li>
+                        <li>Self-Awareness</li>
+                        <li>Patience</li>
+                        <li>Quick Learner</li>
+                        <li>Curiosity</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

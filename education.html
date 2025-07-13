@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> RINCE PORTFOLIO - Education </title>
+        <link rel="stylesheet" href="education.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+
+    <body>
+        <header class="header">
+            <a href="index.html" class="logo"> <span>https.</span>rince </a>
+            <div id="menu-icon" class="menu-icon"><i class='bx bx-menu'></i></div>
+            <nav class="navbar">
+                <a href="index.html"> PORTFOLIO</a>
+                <a href="aboutme.html"> ABOUT ME</a>
+                <a href="education.html" class="active"> EDUCATION</a>
+                <a href="skills.html"> SKILLS</a>
+                <a href="projects.html"> PROJECTS</a>
+            </nav>
+            <a href="index.html#contact-section" class="contact"> CONTACT ME </a>
+        </header>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const status = urlParams.get('status');
+            const message = urlParams.get('msg');
+
+            if (status === 'success') {
+                alert('Message sent successfully!');
+                history.replaceState(null, '', window.location.pathname + window.location.hash);
+            } else if (status === 'error') {
+                alert('Error: ' + (message ? decodeURIComponent(message) : 'An unknown error occurred.'));
+                history.replaceState(null, '', window.location.pathname + window.location.hash);
+            }
+
+            const menuIcon = document.getElementById('menu-icon');
+            const navbar = document.querySelector('.navbar');
+            const contactBtn = document.querySelector('.header .contact');
+
+            menuIcon.addEventListener('click', () => {
+                navbar.classList.toggle('active');
+                if (navbar.classList.contains('active')) {
+                    contactBtn.style.display = 'none';
+                } else {
+                    contactBtn.style.display = 'block';
+                }
+            });
+
+            navbar.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navbar.classList.remove('active');
+                    contactBtn.style.display = 'block';
+                });
+            });
+        });
+        </script>
+
+        <section class="education-section">
+            <h2 class="section-title"> Education </h2> <div class="education-container">
+
+                <div class="education-entry">
+                    <h3> Cavite State University - Naic <span class="year-range"> 2022 - 2026 </span></h3>
+                    <h4> Bucana Malaki, Naic, Cavite </h4>
+                    <p> I'm currently a third-year student, taking the Bachelor of Science in Computer Science program.
+                        <br>
+                        <br> 1st Year (First Sem): GWA 1.69
+                        <br> 1st Year (Second Sem): GWA 1.28
+                        <br> 2nd Year (First Sem): GWA 1.84
+                        <br> 2nd Year (Second Sem): GWA 1.52
+                        <br> 3rd Year (First Sem): GWA 1.25
+                        <br> 3rd Year (Second Sem): GWA 1.50
+                    </p>
+                </div>
+
+                <div class="education-entry">
+                    <h3> Notre Dame of Trece Martirez <span class="year-range"> 2020 - 2022 </span></h3>
+                    <h4> Don Bosco Executive Village, Trece Martires City, Cavite </h4>
+                    <p> Graduated “With Honors” with Science, Technology, Engineering, and Mathematics (STEM) Strand. </p>
+                </div>
+
+                <div class="education-entry">
+                    <h3> Ternate Integrated National High School <span class="year-range"> 2016 - 2020 </span></h3>
+                    <h4> H. Ventura St., Ternate, Cavite </h4>
+                    <p> A consistent honor student since Grade 7 to Grade 10, and graduated “With Honors”. </p>
+                </div>
+
+                <div class="education-entry">
+                    <h3> San Juan Elementary School <span class="year-range"> 2010 - 2016 </span></h3>
+                    <h4> San Juan II, Ternate, Cavite </h4>
+                    <p> A consistent honor student since Grade 1 to Grade 6, and graduated “With Honors”. </p>
+                </div>
+
+            </div>
+        </section>
+    </body>
+</html>

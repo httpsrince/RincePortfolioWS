@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; 
+    text-decoration: none;
+    list-style: none;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 12%; 
+    background: white;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: #276bac;
+    font-weight: 800;
+    transition: 0.3s ease;
+}
+.logo:hover {
+    color: #276bac;
+    text-shadow: 0 0 25px #276bac,
+                 0 0 50px #276bac;
+    transform: scale(1.1);
+}
+
+span {
+    color: #194a7a;
+}
+
+.navbar {
+    display: flex; 
+    text-align: center;
+}
+
+.navbar a {
+    text-align: center;
+    font-size: 18px;
+    color: #476a8d;
+    font-weight: 750;
+    margin: 0 10px;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #194a7a;
+    border-bottom: 3px solid #194a7a;
+}
+
+.contact {
+    padding: 8px 15px;
+    background-color: #194a7a;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+.contact:hover {
+    background-color: #677f97;
+    color: white;
+}
+
+.menu-icon {
+    font-size: 2.5rem;
+    color: #194a7a;
+    cursor: pointer;
+    display: none; 
+}
+
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12% 8%;
+    gap: 7em;
+    background: white;
+    margin-top: -2.5rem;
+}
+
+.about-img img{
+    position: relative;
+    border-radius: 10%;
+    width: 550px;
+    height: 650px;
+    object-fit: cover;
+}
+.about-content h2{
+    text-align: left;
+    color: #072747;
+    font-size: 30px;
+    margin-top: 0.5rem;
+    margin-bottom: -1.5rem;
+}
+.about-content h3{
+    text-align: left;
+    color: #072747;
+    font-size: 50px;
+}
+.about-content p{
+    margin: 2em 0 1.5em;
+    color: #072747;
+    font-size: 20px; 
+    text-align: justify;
+}
+
+/* Smaller screens (e.g., tablets in portrait or large phones) */
+@media (max-width: 1200px) {
+    .header {
+        padding: 20px 5%; /* Reduce padding on header */
+    }
+    .about {
+        gap: 4em; /* Reduce gap */
+        padding: 20px 5% 0; /* Adjust padding */
+    }
+    .about-content h2 {
+        font-size: 50px; /* Adjust font size */
+    }
+    .about-content h3 {
+        font-size: 30px;
+    }
+    .about-img img {
+        width: 300px; /* Slightly smaller images */
+        height: 400px;
+        margin-top: 15%;
+    }
+    .about {
+        gap: 4em;
+        padding: 8% 5%;
+    }
+    .about-content h3 {
+        font-size: 50px;
+    }
+}
+
+/* Medium screens (e.g., standard tablets, large phones in landscape) */
+@media (max-width: 991px) {
+    .header {
+        padding: 20px 4%;
+    }
+    .about {
+        flex-direction: column; /* Stack content vertically */
+        text-align: center; /* Center text when stacked */
+        gap: 3em; /* Smaller gap */
+        padding: 70px 4% 50px; /* Adjust padding for stacked layout */
+    }
+    .about-content {
+        max-width: 100%; /* Allow content to take full width */
+        order: 2; /* Put content below image */
+    }
+    .about-img {
+        order: 1; /* Put image above content */
+    }
+    .about-content h2 {
+        font-size: 48px;
+    }
+    .about-content h3 {
+        font-size: 38px;
+    }
+    .about-content p {
+        text-align: center; /* Center paragraph text for mobile */
+        font-size: 16px;
+    }
+    .about-img img {
+        width: 280px; /* Smaller images */
+        height: 380px;
+    }
+    .btn-box {
+        width: auto; /* Allow buttons to adjust their width */
+        justify-content: center; /* Center buttons */
+        flex-wrap: wrap; /* Allow buttons to wrap if too wide */
+    }
+    .btn-1, .btn-2 {
+        margin: 5px; /* Add some margin around buttons when wrapped */
+    }
+
+    .about-content h2 {
+        text-align: center;
+        font-size: 36px;
+    }
+    .about-content h3 {
+        text-align: center;
+        font-size: 40px;
+    }
+
+    .contact-form form {
+        max-width: 90%; /* Adjust max-width for form */
+    }
+    .contact-form form .input-box input {
+        margin: 0.5rem 0; /* Reduce vertical margin between stacked inputs */
+    }
+}
+
+/* Small screens (e.g., smartphones) */
+@media (max-width: 768px) {
+    /* Hamburger menu icon and mobile nav toggle */
+    .header .navbar {
+        display: none; /* Hide the regular navbar on small screens */
+    }
+    .header .contact {
+        display: none; /* Hide the contact button on smaller screens, or move it */
+    }
+
+    /* Add a hamburger menu icon (you'll need to add this to HTML) */
+    .menu-icon {
+        font-size: 2.5rem;
+        color: #194a7a;
+        cursor: pointer;
+        display: block; /* Show hamburger icon */
+    }
+
+    /* Mobile Navbar Styling */
+    .navbar.active {
+        display: flex; /* Show when active */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Below the header */
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        padding: 10px 0;
+    }
+    .navbar.active a {
+        display: block;
+        padding: 10px 20px;
+        text-align: left;
+        margin: 0;
+        border-bottom: none;
+    }
+    .navbar.active a:hover {
+        background-color: #f0f0f0;
+    }
+
+    .about-content h2 {
+        font-size: 28px;
+    }
+    .about-content h3 {
+        font-size: 30px;
+    }
+    .about-content p {
+        font-size: 15px;
+    }
+    .img-box img,
+    .about-img img {
+        width: 250px; /* Even smaller images */
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 15px 3%; 
+    }
+    .about {
+        padding: 60px 3% 40px;
+    }
+    .about-content h2 {
+        font-size: 28px;
+    }
+    .about-content h3 {
+        font-size: 20px;
+    }
+    .img-box img,
+    .about-img img {
+        width: 200px; 
+        height: 280px;
+    }
+}
