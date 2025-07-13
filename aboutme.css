@@ -259,7 +259,8 @@ span {
     .about-img img {
         width: 250px; /* Even smaller images */
         height: 350px;
-        margin-top: 3.5rem;
+        margin-top: 4rem;
+        margin-bottom: -1rem;
     }
 }
 
@@ -280,6 +281,7 @@ span {
     .about-img img {
         width: 200px; 
         height: 280px;
-        margin-top: 3.5rem;
+        margin-top: 4rem;
+        margin-bottom: -1rem;
     }
 }
