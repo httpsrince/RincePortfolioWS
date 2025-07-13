@@ -280,6 +280,6 @@ span {
     .about-img img {
         width: 200px; 
         height: 280px;
-        margin-top: -1rem;
+        margin-top: 1rem;
     }
 }
